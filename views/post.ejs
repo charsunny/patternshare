@@ -1,0 +1,39 @@
+<%- include header %>
+
+<script type="text/javascript">
+  $(function(){
+      $("nav ul li").removeClass("active");
+      $("nav ul.navbar-nav li:nth-child(4)").addClass("active");
+      
+      CKEDITOR.replace( 'editor1',
+      {
+        height: '400px'  
+      });
+      $("form").submit(function(){
+          alert($("form.editor1"));
+      });
+      // function post(action) {
+      //     alert(action);
+      //     $("form").action = action;
+      //     $("form").submit();
+      // }
+      //var editor = $('textarea#editor1').ckeditor();
+      //editor.resize('100%', '400px', false);
+  });
+</script>
+<form role="form" method="post">
+
+<div class="form-group">
+  <input class="form-control" id="input" placeholder="请输入标题"/>
+</div>
+
+<div class="form-group">
+  <textarea cols="100" id="editor1" name="editor1" rows="100"></textarea>
+</div>
+
+<div class="form-group">
+  <button type="submit" onclick="post('/public')" class="btn btn-primary">发表</button>
+  <button type="submit" onclick="post('/save')" class="btn btn-success">存为草稿</button>
+</div>
+</form>
+<%- include footer %>

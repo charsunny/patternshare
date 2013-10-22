@@ -1,0 +1,31 @@
+<%- include header %>
+<script type="text/javascript">
+  $(function(){
+      $("nav ul li").removeClass("active");
+      $("nav ul.navbar-right li:nth-child(1)").addClass("active");
+  });
+</script>
+<form class="form-horizontal" method="post"> 
+  <fieldset>     
+    <legend>用户注册</legend> 
+    <div class="control-group">       
+      <label class="control-label" for="username">用户名</label> 
+      <div class="controls"> 
+        <input type="text" class="input-xlarge" id="username" name="username">         
+      </div> 
+    </div>
+    <br/> 
+    <div class="control-group">       
+      <label class="control-label" for="password">口令</label> 
+      <div class="controls"> 
+        <input type="password" class="input-xlarge" id="password" name="password"> 
+      </div> 
+    </div> 
+    <br/>
+    <div class="form-actions">       
+      <button type="submit" class="btn btn-primary">登录</button>     
+    </div> 
+  </fieldset> 
+</form> 
+
+<%- include footer %>
